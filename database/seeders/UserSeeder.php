@@ -18,12 +18,12 @@ class UserSeeder extends Seeder
 		'name' => 'adCementerio',
 		'email' => 'admin.cementerio@prueba.com',
 		'password' => bcrypt('12345')
-		]);
+	])->assignRole('Admin');
 		
 		User::create([
 			'name' => 'obCementerio',
 			'email' => 'observer.cementerio@prueba.com',
 			'password' => bcrypt('12345')
-		]);
+		])->assignRole('Observador');
     }
 }
