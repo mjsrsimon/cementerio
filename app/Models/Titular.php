@@ -10,12 +10,9 @@ class Titular extends Model
     use HasFactory;
     
 	protected $fillable = [
-	'nombre', 'primer_apellido'
+	'nombre', 'primer_apellido', 'segundo_apellido'
 	];
     
-	protected $casts =[
-	'segundo_apellido'
-	];
     
     
 }

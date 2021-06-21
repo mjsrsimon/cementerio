@@ -25,7 +25,8 @@ class TitularController extends Controller
      */
     public function create()
     {
-		return view('titular.create');
+		$titulares = Titular::all();
+		return view('titulars.create', compact('titulares'));
     }
 
     /**
@@ -37,7 +38,9 @@ class TitularController extends Controller
     public function store(Request $request)
     {
         
-	
+		$this->validate($request, [
+			'nombre' => 'required',
+		]);
 
 		Titular::create([
 		'nombre' => request('nombre'),
@@ -46,7 +49,8 @@ class TitularController extends Controller
 			
 		]);
 
-		return redirect(route('titular.index'));
+		return redirect(route('titulars.index'));
+        
         
         
     }
@@ -59,7 +63,7 @@ class TitularController extends Controller
      */
     public function show(Titular $titular)
     {
-        //
+		 return view('titulars.show', compact('titular'));
     }
 
     /**
@@ -70,7 +74,7 @@ class TitularController extends Controller
      */
     public function edit(Titular $titular)
     {
-        //
+		 return view('titulars.edit', compact('titular'));
     }
 
     /**
@@ -82,7 +86,20 @@ class TitularController extends Controller
      */
     public function update(Request $request, Titular $titular)
     {
-        //
+		$this->validate($request, [
+			'nombre' => 'required',
+		]);
+
+		$titular->update([
+		'nombre' => request('nombre'),
+		'primer_apellido' => request('primer_apellido'),
+		'segundo_apellido' => request('segundo_apellido'),
+		]);
+
+
+		return redirect(route('titulars.index'));
+		
+		
     }
 
     /**
@@ -93,6 +110,8 @@ class TitularController extends Controller
      */
     public function destroy(Titular $titular)
     {
-        //
+        $titular->delete();
+
+		return back();
     }
 }
