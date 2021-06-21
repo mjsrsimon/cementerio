@@ -6,7 +6,7 @@
 
 <div class="container mx-auto my-8">
 
-	<form action="{{ route('titulars.store') }}" method="POST">
+	<form action="{{ route('fallecidos.store') }}" method="POST">
 		@csrf
 		<div class="container grid grid-cols-2 w-1/2 gap-4">
 			<label class="text-xl font-bold">Nombre</label>
@@ -28,10 +28,31 @@
 			</div>
 			
 			
+			<label class="text-xl font-bold">Situación</label>
+			<div>
+				<input class="rounded w-full" type="text" name="situacion"/>
+
+			</div>
+			
+
+			<label class="text-xl font-bold">Fecha Sepelio</label>
+			<div>
+				<input class="rounded w-full" type="date" name="FechaSepelio"/>
+
+			</div>
+			<label class="text-xl font-bold">Observaciones</label>
+			<div>
+				<input class="rounded w-full" type="text" name="observaciones"/>
+
+			</div>
+			
+
+			
+			
 		</div>
 		<div class="pt-8">
 			<input class="btn-primary" type="submit" name="guardar" value="Guardar"/>
-			<a class="text-gray-500 ml-4" href="{{ route('titulars.index') }}">Cancelar</a>
+			<a class="text-gray-500 ml-4" href="{{ route('fallecidos.index') }}">Cancelar</a>
 		</div>
 	</form>
 </div>

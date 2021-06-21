@@ -29,7 +29,16 @@
 				   </x-nav-link>
 					
 					
+					<!--ICONO fallecidos-->
+					<x-nav-link :href="route('fallecidos.index')" :active="request()->routeIs('fallecidos')">
+						<div
+                            class="text-center text-blue-700 rounded-lg bg-blue-500 bg-opacity-25  py-3 px-3 text-sm btn-primary">
+							Fallecidos
+						</div>
+					</x-nav-link>
+					
                 </div>
+              
             </div>
 
             <!-- Settings Dropdown -->

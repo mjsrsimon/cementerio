@@ -14,7 +14,8 @@ class FallecidoController extends Controller
      */
     public function index()
     {
-        //
+		$fallecidos = Fallecido::all();
+		return view('fallecidos.index', compact('fallecidos'));
     }
 
     /**
@@ -24,7 +25,8 @@ class FallecidoController extends Controller
      */
     public function create()
     {
-        //
+		$fallecidos = Fallecido::all();
+		return view('fallecidos.create', compact('fallecidos'));
     }
 
     /**
@@ -35,7 +37,23 @@ class FallecidoController extends Controller
      */
     public function store(Request $request)
     {
-        //
+		$this->validate($request, [
+			'nombre' => 'required',
+		]);
+
+		Fallecido::create([
+			'nombre' => request('nombre'),
+			'primer_apellido' => request('primer_apellido'),
+			'segundo_apellido' => request('segundo_apellido'),
+			
+			'situacion'=> request( 'situacion'),
+			'FechaSepelio'=> request('FechaSepelio'),
+			'observaciones'=> request('observaciones')
+			
+
+		]);
+
+		return redirect(route('fallecidos.index'));
     }
 
     /**
@@ -46,7 +64,7 @@ class FallecidoController extends Controller
      */
     public function show(Fallecido $fallecido)
     {
-        //
+		return view('fallecidos.show', compact('fallecido'));
     }
 
     /**
@@ -57,7 +75,7 @@ class FallecidoController extends Controller
      */
     public function edit(Fallecido $fallecido)
     {
-        //
+		return view('fallecidos.edit', compact('fallecido'));
     }
 
     /**
@@ -69,7 +87,21 @@ class FallecidoController extends Controller
      */
     public function update(Request $request, Fallecido $fallecido)
     {
-        //
+		$this->validate($request, [
+			'nombre' => 'required',
+		]);
+
+		$fallecido->update([
+			'nombre' => request('nombre'),
+			'primer_apellido' => request('primer_apellido'),
+			'segundo_apellido' => request('segundo_apellido'),
+			'situacion'=> request( 'situacion'),
+			'FechaSepelio'=> request('FechaSepelio'),
+			'observaciones'=> request('observaciones')
+		]);
+
+
+		return redirect(route('titulars.index'));
     }
 
     /**
@@ -80,6 +112,8 @@ class FallecidoController extends Controller
      */
     public function destroy(Fallecido $fallecido)
     {
-        //
+		$fallecido->delete();
+
+		return back();
     }
 }

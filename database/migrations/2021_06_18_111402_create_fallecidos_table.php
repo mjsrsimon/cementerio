@@ -15,10 +15,11 @@ class CreateFallecidosTable extends Migration
     {
         Schema::create('fallecidos', function (Blueprint $table) {
 			$table->id();
+			$table->string('nombre')->required();
 			$table->string('primer_apellido')->nullable();
 			$table->string('segundo_apellido')->nullable();
 			$table->string('situacion')->nullable();
-			$table->dateTimeTz('FechaSepelio')->nullable();
+			$table->date('FechaSepelio')->nullable();
 			$table->text('observaciones')->nullable();
 			$table->timestamps();
         });
