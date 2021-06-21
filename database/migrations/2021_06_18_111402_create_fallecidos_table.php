@@ -19,6 +19,8 @@ class CreateFallecidosTable extends Migration
 			$table->string('primer_apellido')->nullable();
 			$table->string('segundo_apellido')->nullable();
 			$table->string('situacion')->nullable();
+			$table->string('decreto')->nullable();
+			$table->string('OS')->nullable();
 			$table->date('FechaSepelio')->nullable();
 			$table->text('observaciones')->nullable();
 			$table->timestamps();

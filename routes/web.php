@@ -3,7 +3,9 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FallecidoController;
 use App\Http\Controllers\TitularController;
+use App\Http\Controllers\NichoController;
 
+use App\Http\Controllers\NichoRestoController;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,7 +20,8 @@ use App\Http\Controllers\TitularController;
 Route::resource('titulars', TitularController::class);
 Route::resource('fallecidos', FallecidoController::class);
 
-
+Route::resource('nichos', NichoController::class);
+Route::resource('nichos_restos', NichoRestoController::class);
 
 Route::get('/', function () {
     return view('welcome');

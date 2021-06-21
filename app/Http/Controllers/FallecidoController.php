@@ -47,6 +47,8 @@ class FallecidoController extends Controller
 			'segundo_apellido' => request('segundo_apellido'),
 			
 			'situacion'=> request( 'situacion'),
+			'decreto'=>request('decreto'),
+			'OS'=> request('OS'),
 			'FechaSepelio'=> request('FechaSepelio'),
 			'observaciones'=> request('observaciones')
 			
@@ -96,6 +98,8 @@ class FallecidoController extends Controller
 			'primer_apellido' => request('primer_apellido'),
 			'segundo_apellido' => request('segundo_apellido'),
 			'situacion'=> request( 'situacion'),
+			'decreto'=>request('decreto'),
+			'OS'=> request('OS'),
 			'FechaSepelio'=> request('FechaSepelio'),
 			'observaciones'=> request('observaciones')
 		]);

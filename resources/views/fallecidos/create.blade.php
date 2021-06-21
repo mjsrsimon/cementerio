@@ -45,7 +45,16 @@
 				<input class="rounded w-full" type="text" name="observaciones"/>
 
 			</div>
-			
+			<label class="text-xl font-bold">Decreto</label>
+			<div>
+				<input class="rounded w-full" type="text" name="decreto"/>
+
+			</div>
+			<label class="text-xl font-bold">OS</label>
+			<div>
+				<input class="rounded w-full" type="text" name="OS"/>
+
+			</div>
 
 			
 			
