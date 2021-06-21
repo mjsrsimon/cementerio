@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Nicho_Resto;
+use App\Models\FallecidoNicho;
 use Illuminate\Http\Request;
 
-class NichoRestoController extends Controller
+class FallecidoNichoController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class NichoRestoController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Nicho_Resto  $nicho_Resto
+     * @param  \App\Models\FallecidoNicho  $fallecidoNicho
      * @return \Illuminate\Http\Response
      */
-    public function show(Nicho_Resto $nicho_Resto)
+    public function show(FallecidoNicho $fallecidoNicho)
     {
         //
     }
@@ -52,10 +52,10 @@ class NichoRestoController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Models\Nicho_Resto  $nicho_Resto
+     * @param  \App\Models\FallecidoNicho  $fallecidoNicho
      * @return \Illuminate\Http\Response
      */
-    public function edit(Nicho_Resto $nicho_Resto)
+    public function edit(FallecidoNicho $fallecidoNicho)
     {
         //
     }
@@ -64,10 +64,10 @@ class NichoRestoController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Models\Nicho_Resto  $nicho_Resto
+     * @param  \App\Models\FallecidoNicho  $fallecidoNicho
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Nicho_Resto $nicho_Resto)
+    public function update(Request $request, FallecidoNicho $fallecidoNicho)
     {
         //
     }
@@ -75,10 +75,10 @@ class NichoRestoController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Nicho_Resto  $nicho_Resto
+     * @param  \App\Models\FallecidoNicho  $fallecidoNicho
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Nicho_Resto $nicho_Resto)
+    public function destroy(FallecidoNicho $fallecidoNicho)
     {
         //
     }

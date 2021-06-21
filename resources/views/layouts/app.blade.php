@@ -25,22 +25,13 @@
 				<div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
 					<!-- aqui habia 2 llaves abrir + cierre y en medio: $header-->
 					
-					<!--ICONO nichos-->
+					<!--ICONO fallecidos-->
 					<x-nav-link :href="route('nichos.index')" :active="request()->routeIs('nichos')">
 						<div
                             class="text-center text-blue-700 rounded-lg bg-blue-500 bg-opacity-25  py-3 px-3 text-sm btn-primary">
-							Nichos
+							NICHOS
 						</div>
 					</x-nav-link>
-					
-					<!--ICONO nichos restos-->
-					<x-nav-link :href="route('nichos_restos.index')" :active="request()->routeIs('nichos_restos')">
-						<div
-                            class="text-center text-blue-700 rounded-lg bg-blue-500 bg-opacity-25  py-3 px-3 text-sm btn-primary">
-							Nichos Restos
-						</div>
-					</x-nav-link>
-					
 					
 				</div>
 			</header>

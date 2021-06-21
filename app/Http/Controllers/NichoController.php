@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\Nicho;
 use Illuminate\Http\Request;
+use App\Models\Fallecido;
 
 class NichoController extends Controller
 {
@@ -15,7 +16,8 @@ class NichoController extends Controller
     public function index()
     {
 		$nichos = Nicho::all();
-		return view('nichos.index', compact('nichos'));
+		$fallecidos = Fallecido::all();
+		return view('nichos.index', compact(['nichos', 'fallecidos']));
     }
 
     /**
@@ -25,7 +27,7 @@ class NichoController extends Controller
      */
     public function create()
     {
-		$nichos = nicho::all();
+		$nichos = Nicho::all();
 		return view('nichos.create', compact('nichos'));
     }
 
@@ -41,7 +43,7 @@ class NichoController extends Controller
 			'numero' => 'required',
 		]);
 
-		nicho::create([
+		Nicho::create([
 			'numero' => request('numero'),
 			'alquiler' => request('alquiler'),
 			'cenizas' => request('cenizas'),
