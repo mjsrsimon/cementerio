@@ -1,6 +1,8 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FallecidoController;
+use App\Http\Controllers\TitularController;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,6 +14,11 @@ use Illuminate\Support\Facades\Route;
 | contains the "web" middleware group. Now create something great!
 |
 */
+
+Route::resource('titulars', TitularController::class);
+Route::resource('fallecidos', FallecidoController::class);
+
+
 
 Route::get('/', function () {
     return view('welcome');

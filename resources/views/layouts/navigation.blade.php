@@ -11,10 +11,24 @@
                 </div>
 
                 <!-- Navigation Links -->
+                
                 <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
+					<!--cadda una de las opciones es un icono del menu-->
+                <!--ICONO DASHBOARD--> 
                     <x-nav-link :href="route('dashboard')" :active="request()->routeIs('dashboard')">
                         {{ __('Dashboard') }}
                     </x-nav-link>
+                    
+               
+				   <!--ICONO titulares-->
+				   <x-nav-link :href="route('titulars.index')" :active="request()->routeIs('titulars')">
+				   	<div
+                            class="text-center text-blue-700 rounded-lg bg-blue-500 bg-opacity-25  py-3 px-3 text-sm btn-primary">
+				   		Titulares
+				   	</div>
+				   </x-nav-link>
+					
+					
                 </div>
             </div>
 
