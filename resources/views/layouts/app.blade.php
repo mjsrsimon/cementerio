@@ -25,7 +25,7 @@
 				<div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
 					<!-- aqui habia 2 llaves abrir + cierre y en medio: $header-->
 					
-					<!--ICONO fallecidos-->
+					<!--ICONO nichos-->
 					<x-nav-link :href="route('nichos.index')" :active="request()->routeIs('nichos')">
 						<div
                             class="text-center text-blue-700 rounded-lg bg-blue-500 bg-opacity-25  py-3 px-3 text-sm btn-primary">

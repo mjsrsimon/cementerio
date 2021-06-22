@@ -4,6 +4,9 @@ namespace App\Http\Controllers;
 
 use App\Models\FallecidoNicho;
 use Illuminate\Http\Request;
+use App\Models\Nicho;
+use App\Models\Fallecido;
+
 
 class FallecidoNichoController extends Controller
 {
@@ -67,9 +70,20 @@ class FallecidoNichoController extends Controller
      * @param  \App\Models\FallecidoNicho  $fallecidoNicho
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, FallecidoNicho $fallecidoNicho)
+	 public function update(Request $request, Fallecido $fallecido, Nicho $nicho, FallecidoNicho $fallecidoNicho )
     {
-        //
+		$this->validate($request, [
+			'id' => 'required',
+		]);
+
+		$fallecidoNicho->update([
+			'id' => request('id'),
+			'fallecido_id ' => request('fallecido_id '),
+			'nicho_id' => request('nicho_id'),
+		]);
+
+
+		return redirect(route('titulars.index'));
     }
 
     /**

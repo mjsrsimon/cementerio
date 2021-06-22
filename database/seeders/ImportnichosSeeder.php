@@ -21,7 +21,7 @@ class ImportnichosSeeder extends Seeder
 		
 		
 		$csv = Reader::createFromPath('database/seeds/nichos.csv', 'r');
-		//$csv->setHeaderOffset(0);
+		
 		$csv = $csv->getRecords();
 		
 		foreach ($csv as $row) {
@@ -33,12 +33,9 @@ class ImportnichosSeeder extends Seeder
 			$registro->libre = NULL;
 			$registro->created_at = NULL;
 			$registro->updated_at = NULL;
-			
 					
-			$registro->save();
-				
-			
-			
+			$registro->save();			
+		
 		}
 		
 		

@@ -47,7 +47,6 @@ class NichoController extends Controller
 			'numero' => request('numero'),
 			'alquiler' => request('alquiler'),
 			'cenizas' => request('cenizas'),
-
 			'libre'=> request( 'libre')
 			
 
