@@ -3,6 +3,9 @@
 namespace Database\Seeders;
 use App\Models\User;
 use Illuminate\Database\Seeder;
+use Illuminate\Database\Seeds;
+
+
 
 class DatabaseSeeder extends Seeder
 {
@@ -15,5 +18,6 @@ class DatabaseSeeder extends Seeder
     {
 		$this->call(RoleSeeder::class);
 		$this->call(UserSeeder::class);
+		$this->call(ImportnichosSeeder::class);
     }
 }

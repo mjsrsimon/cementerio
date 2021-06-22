@@ -16,10 +16,10 @@ class CreateNichosTable extends Migration
         Schema::create('nichos', function (Blueprint $table) {
             $table->id();
           
-			$table->string('numero')->required();
-			$table->boolean('alquiler');       
-			$table->boolean('cenizas');  
-			$table->boolean('libre');
+			$table->string('numero', 10)->required();
+			$table->boolean('alquiler')->nullable();       
+			$table->boolean('cenizas')->nullable();  
+			$table->boolean('libre')->nullable();
 			     
             $table->timestamps();
         });
