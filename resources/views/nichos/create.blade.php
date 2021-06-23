@@ -2,47 +2,36 @@
 
 @section('content')
 
-<h1>NUEVO NICHO</h1>
+<h1>NUEVO TITUTAR</h1>
 
 <div class="container mx-auto my-8">
 
-	<form action="{{ route('nichos.store') }}" method="POST">
+	<form action="{{ route('titulars.store') }}" method="POST">
 		@csrf
 		<div class="container grid grid-cols-2 w-1/2 gap-4">
-			<label class="text-xl font-bold">Numero</label>
+			<label class="text-xl font-bold">Nombre</label>
 			<div>
-				<input class="rounded w-full" type="text" name="numero"/>
+				<input class="rounded w-full" type="text" name="nombre"/>
 				
 			</div>
 			
-			<label class="text-xl font-bold">Alquiler / Propiedad</label>
+			<label class="text-xl font-bold">Primer Apellido</label>
 			<div>
-				<input class="rounded w-full" type="boolean" name="alquiler"/>
+			<input class="rounded w-full" type="text" name="primer_apellido"/>
 			
 			</div>
 			
-			<label class="text-xl font-bold">Cenizas / Cuerpo</label>
+			<label class="text-xl font-bold">Segundo Apellido</label>
 			<div>
-				<input class="rounded w-full" type="boolean" name="cenizas"/>
+				<input class="rounded w-full" type="text" name="segundo_apellido"/>
 				
 			</div>
-			
-			
-			<label class="text-xl font-bold">Libre</label>
-			<div>
-				<input class="rounded w-full" type="boolean" name="libre"/>
-
-			</div>
-			
-
-			
-
 			
 			
 		</div>
 		<div class="pt-8">
 			<input class="btn-primary" type="submit" name="guardar" value="Guardar"/>
-			<a class="text-gray-500 ml-4" href="{{ route('nichos.index') }}">Cancelar</a>
+			<a class="text-gray-500 ml-4" href="{{ route('titulars.index') }}">Cancelar</a>
 		</div>
 	</form>
 </div>

@@ -15,10 +15,6 @@ class Fallecido extends Model
 	];
 	
 	
-	public function nichos()
-	{
-		return $this -> belongsToMany(Nicho::class, 'fallecido_nichos','fallecido_id','nicho_id');
-	}
 	
 	
 }

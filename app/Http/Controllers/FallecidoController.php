@@ -89,23 +89,25 @@ class FallecidoController extends Controller
      */
     public function update(Request $request, Fallecido $fallecido)
     {
+		
 		$this->validate($request, [
 			'nombre' => 'required',
 		]);
-
+		
 		$fallecido->update([
 			'nombre' => request('nombre'),
 			'primer_apellido' => request('primer_apellido'),
 			'segundo_apellido' => request('segundo_apellido'),
-			'situacion'=> request( 'situacion'),
+			'situacion'=> request('situacion'),
 			'decreto'=>request('decreto'),
 			'OS'=> request('OS'),
 			'FechaSepelio'=> request('FechaSepelio'),
 			'observaciones'=> request('observaciones')
 		]);
 
+	dd($fallecido);
 
-		return redirect(route('titulars.index'));
+		return redirect(route('fallecidos.index'));
     }
 
     /**

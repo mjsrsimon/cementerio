@@ -18,6 +18,7 @@ class DatabaseSeeder extends Seeder
     {
 		$this->call(RoleSeeder::class);
 		$this->call(UserSeeder::class);
-		$this->call(ImportnichosSeeder::class);
+		$this->call(ImportNichoSeeder::class);
+		
     }
 }

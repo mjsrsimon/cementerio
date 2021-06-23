@@ -4,7 +4,6 @@ namespace App\Http\Controllers;
 
 use App\Models\Nicho;
 use Illuminate\Http\Request;
-use App\Models\Fallecido;
 
 class NichoController extends Controller
 {
@@ -16,8 +15,7 @@ class NichoController extends Controller
     public function index()
     {
 		$nichos = Nicho::all();
-		$fallecidos = Fallecido::all();
-		return view('nichos.index', compact(['nichos', 'fallecidos']));
+		return view('nichos.index', compact('nichos'));
     }
 
     /**
@@ -27,8 +25,7 @@ class NichoController extends Controller
      */
     public function create()
     {
-		$nichos = Nicho::all();
-		return view('nichos.create', compact('nichos'));
+        //
     }
 
     /**
@@ -46,14 +43,13 @@ class NichoController extends Controller
 		Nicho::create([
 			'numero' => request('numero'),
 			'alquiler' => request('alquiler'),
-			'cenizas' => request('cenizas'),
-			'libre'=> request( 'libre')
-			
-
+			'libre' => request('libre'),
+			'ceniza'=> request('ceniza')
 
 		]);
 
 		return redirect(route('nichos.index'));
+
     }
 
     /**
@@ -64,6 +60,8 @@ class NichoController extends Controller
      */
     public function show(Nicho $nicho)
     {
+	
+		
 		return view('nichos.show', compact('nicho'));
     }
 
@@ -87,7 +85,6 @@ class NichoController extends Controller
      */
     public function update(Request $request, Nicho $nicho)
     {
-
 		$this->validate($request, [
 			'numero' => 'required',
 		]);
@@ -95,13 +92,13 @@ class NichoController extends Controller
 		$nicho->update([
 			'numero' => request('numero'),
 			'alquiler' => request('alquiler'),
-			'cenizas' => request('cenizas'),
-			'libre'=> request( 'libre')
-			
+			'libre' => request('libre'),
+			'ceniza'=> request('ceniza')
 		]);
 
 
-		return redirect(route('titulars.index'));
+		return redirect(route('nichos.index'));
+
     }
 
     /**
@@ -112,8 +109,6 @@ class NichoController extends Controller
      */
     public function destroy(Nicho $nicho)
     {
-		$nicho->delete();
-
-		return back();
+        //
     }
 }
