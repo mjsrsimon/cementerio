@@ -15,7 +15,7 @@ class CreateNichosTable extends Migration
     {
         Schema::create('nichos', function (Blueprint $table) {
             $table->id();
-			$table->string('numero');
+			$table->string('numero', 6);
 			$table->string('alquiler')->nullable();
 			$table->string('libre')->nullable();
 			$table->string('ceniza')->nullable();

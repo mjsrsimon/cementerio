@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Models\Nicho;
+use App\Models\Fallecido;
 use Illuminate\Http\Request;
 
 class NichoController extends Controller
@@ -15,7 +16,8 @@ class NichoController extends Controller
     public function index()
     {
 		$nichos = Nicho::all();
-		return view('nichos.index', compact('nichos'));
+		$fallecidos = Fallecido::all();
+		return view('nichos.index', compact(['nichos','fallecidos']));
     }
 
     /**
@@ -73,7 +75,9 @@ class NichoController extends Controller
      */
     public function edit(Nicho $nicho)
     {
-		return view('nichos.edit', compact('nicho'));
+		$fallecidos = Fallecido::all();
+	
+		return view('nichos.edit', compact(['nicho','fallecidos']));
     }
 
     /**
@@ -85,6 +89,9 @@ class NichoController extends Controller
      */
     public function update(Request $request, Nicho $nicho)
     {
+    	
+		
+		$fallecidos = Fallecido::all();
 		$this->validate($request, [
 			'numero' => 'required',
 		]);
@@ -93,9 +100,20 @@ class NichoController extends Controller
 			'numero' => request('numero'),
 			'alquiler' => request('alquiler'),
 			'libre' => request('libre'),
-			'ceniza'=> request('ceniza')
+			'ceniza'=> request('ceniza'),
+			
 		]);
 
+		
+		/**
+		* Almaceno en la relacion fallecido-nicho el id del fallecido y el id del nicho. 
+		* Ver la tabla relacional
+		* 
+		* @return
+		*/
+		$nicho->fallecidos()->attach($request->fallecido_id);
+		
+		
 
 		return redirect(route('nichos.index'));
 

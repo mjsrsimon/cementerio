@@ -14,7 +14,7 @@ class ImportNichoSeeder extends Seeder
      */
     public function run()
     {
-		$csv = Reader::createFromPath('database/seeds/nichos.csv', 'r');
+		$csv = Reader::createFromPath('database/seeders/nichos.csv', 'r');
 
 		$csv = $csv->getRecords();
 
